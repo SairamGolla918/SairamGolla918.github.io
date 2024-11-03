@@ -311,6 +311,36 @@ body{
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
+.material-symbols-outlined{
+  width: 1em;
+  height: 1em;
+  font-variation-settings: 
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opzs' 24;
+}
+
+:has(> .state-layer){
+  position: relative;
+  overflow:hidden ;
+  z-index: 1;
+}
+
+.state-layer{
+  position: absolute;
+  inset: 0;
+  background-color: var(--state-layer-bg);
+  transition: var(--motion-duration-short-1) var(--motion-easing-linear);
+  opacity: 0;
+}
+
+:has(> .state-layer):hover .state-layer{opacity: 0.08;}
+
+:has(> .state-layer):is(:focus, :focus-visible, :active) .state-layer{
+  opacity: 0.12;
+
+}
 
 
 
@@ -322,6 +352,12 @@ body{
  * BUTTON
  */
 
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+  }
 
 /**
  * TAB
@@ -350,7 +386,37 @@ body{
   #TOP BAR
 \*-----------------------------------*/
 
+.topbar{
+  background-color: var(--background);
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: var(--top-bar-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 16px;
+  z-index: 4;
+}
 
+[data-theme="dark"] .logo .light,
+[data-theme="light"] .logo .dark {display:none;}
+
+[data-theme="dark"] .logo .dark,
+[data-theme="light"] .logo .light {display:block;}
+
+
+.theme-btn {
+  color: var(--on-surface-variant);
+  --state-layer-bg: var(--on-surface-variant);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+
+}
+
+[data-theme="dark"] .theme-btn .light,
+[data-theme="light"] .theme-btn .dark {display:none;}
 
 
 
