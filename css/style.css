@@ -388,7 +388,7 @@ body{
   margin-block-start: 24px;
   margin-inline:16px;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(2,1fr);
   justify-content:center ;
 }
 
@@ -478,7 +478,7 @@ body{
  */
 
 .card{
-  background-color: var(--surface-container-low);
+  background-color:hsl(0, 0%, 10%);
   /* background-color: hsl(0, 0%, 90%);  */
   /* border-radius: var(--radius-medium); */
   padding: 16px;
@@ -487,9 +487,20 @@ body{
   border-radius: var(--shape-corner-small);
   box-shadow: var(--elevation-1); 
 }
+[data-theme="light"] .card{
+
+  background-color: hsl(0, 0%, 99%);
+}
+
+
 
 .card:hover{
-  background-color: hsl(0, 0%, 50%); /* Slight grey for dark theme */
+  background-color:hsl(0, 0%, 19%);
+  border-radius: var(--shape-corner-small, 4px);
+}
+
+[data-theme="light"] .card:hover {
+  background-color: hsl(0, 0%, 85%); /* Slight grey for dark theme */
   border-radius: var(--shape-corner-small, 4px);
 }
 

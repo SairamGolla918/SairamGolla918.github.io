@@ -31,3 +31,26 @@ const changeTheme = () => {
 }
 
 $themeBtn.addEventListener("click",changeTheme);
+
+
+// Tab Functinality
+
+// Select all tab buttons and all tab content sections
+const tabButtons = document.querySelectorAll("[data-tab-btn]");
+const tabContents = document.querySelectorAll("[data-tab-content]");
+
+// Set up event listeners for each tab button
+tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Remove "active" class from all buttons and content sections
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        tabContents.forEach(content => content.classList.remove("active"));
+
+        // Add "active" class to the clicked button
+        button.classList.add("active");
+
+        // Show the corresponding tab content
+        const targetContent = document.querySelector(`[data-tab-content="${button.dataset.tabBtn}"]`);
+        targetContent.classList.add("active");
+    });
+});
