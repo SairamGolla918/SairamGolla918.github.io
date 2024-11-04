@@ -359,6 +359,7 @@ body{
   object-fit: cover;
 }
 
+.tab-content:not(.active){display: none;}
 
 
 /*-----------------------------------*\
@@ -473,6 +474,41 @@ body{
 /**
  * CARD
  */
+
+.card{
+  background-color: var(--surface-container-low);
+  /* background-color: hsl(0, 0%, 90%);  */
+  /* border-radius: var(--radius-medium); */
+  padding: 16px;
+  --state-layer-bg:var(--on-surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--shape-corner-small);
+  box-shadow: var(--elevation-1); 
+}
+
+.card:hover{
+  background-color: hsl(0, 0%, 50%); /* Slight grey for dark theme */
+  border-radius: var(--shape-corner-small, 4px);
+}
+
+.card-banner {
+  border-radius: var(--radius-medium);
+}
+
+.card-content{
+  display: grid;
+  gap:4px;
+}
+
+.card-subtitle{
+  color: var(--on-surface-variant);
+}
+
+.card-title{
+  color: var(--on-surface);
+}
+
+
 
 
 /**
@@ -614,7 +650,11 @@ body{
   #PROJECT
 \*-----------------------------------*/
 
-
+.project-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
 
 
 
