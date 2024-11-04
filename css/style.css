@@ -361,6 +361,9 @@ body{
 
 .tab-content:not(.active){display: none;}
 
+.section-title {
+  margin: 16px;
+}
 
 /*-----------------------------------*\
   #COMPONENT
@@ -398,28 +401,27 @@ body{
   color: var(--on-surface-variant);
   --state-layer-bg:var(--on-surface-variant);
   transition: background-color 0.2s ease;
+}
+
+.tab-btn.active{
+  background-color:hsl(0, 0%, 15%);
+  border-radius: var(--shape-corner-small, 4px);
   
-
 }
-
-.tab-btn.active{  
-  background-color: hsl(0, 0%, 90%); /* Light grey for light theme */
-  color: var(--primary);
-}
-
-/* Dark theme active tab */
-.tab-btn.active {
-  background-color: hsl(0, 0%, 50%); /* Dark grey for dark theme */
+[data-theme="light"] .tab-btn.active{
+  background-color: hsl(0, 0%, 90%);
   border-radius: var(--shape-corner-small, 4px);
 }
 
+
 /* Hover effect for all tabs */
 .tab-btn:hover {
-  background-color: hsl(0, 0%, 90%); /* Slight grey for light theme */
+  background-color:hsl(0, 0%, 15%);
+  border-radius: var(--shape-corner-small, 4px); /* Slight grey for light theme */
 }
 
-.tab-btn:hover {
-  background-color: hsl(0, 0%, 50%); /* Slight grey for dark theme */
+[data-theme="light"] .tab-btn:hover {
+  background-color: hsl(0, 0%, 90%); /* Slight grey for dark theme */
   border-radius: var(--shape-corner-small, 4px);
 }
 
@@ -606,7 +608,7 @@ body{
 \*-----------------------------------*/
 
 .about-card {
-  background-color: var(--surface-container-low);
+  /* background-color: var(--surface-container-low); */
   color: var(--on-surface-variant);
   margin-inline: 16px;
   padding: 16px;
@@ -617,10 +619,10 @@ body{
 }
 
 [data-theme="light"] .about-card {
-  background-color: var(--surface-container-low-light);
+  background-color: hsl(0, 0%, 95%);
 }
 [data-theme="dark"] .about-card {
-  background-color: var(--surface-container-low-dark);
+  background-color: hsl(0, 0%, 15%);
 }
 
 .about-card .card-title{
@@ -661,6 +663,55 @@ body{
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
+
+.resume-tab .list{
+  display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  gap:24px;
+  margin: 28px;
+}
+
+.resume-card {
+  display:grid;
+  gap:4px; 
+}
+
+.resume-card .card-subtitle{
+  color: var(--primary);
+}
+
+.resume-card .card-text{
+  color: var(--on-surface-variant);
+}
+
+.resume-bottom-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fgr));
+  gap:12px;
+  margin: 28px;
+}
+
+.resume-bottom-item{
+  display:flex;
+  align-items: center;
+  gap:8px;
+  padding: 12px;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--shape-corner-small);
+  box-shadow: var(--elevation-1); 
+}
+
+.resume-bottom-item{
+  background-color:hsl(0, 0%, 15%);
+}
+[data-theme="light"] .resume-bottom-item{
+  background-color: hsl(0, 0%, 90%);;
+}
+.resume-bottom-item .icon{
+  height: 28px;
+
+}
+
 
 
 
