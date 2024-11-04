@@ -379,6 +379,70 @@ body{
 /**
  * TAB
  */
+.primary-tabs{
+  background-color: var(--background);
+  margin-block-start: 24px;
+  margin-inline:16px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content:center ;
+}
+
+.tab-btn {
+  height: 48px;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  background-color: var(--surface);
+  color: var(--on-surface-variant);
+  --state-layer-bg:var(--on-surface-variant);
+  transition: background-color 0.2s ease;
+  
+
+}
+
+.tab-btn.active{  
+  background-color: hsl(0, 0%, 90%); /* Light grey for light theme */
+  color: var(--primary);
+}
+
+/* Dark theme active tab */
+.tab-btn.active {
+  background-color: hsl(0, 0%, 50%); /* Dark grey for dark theme */
+  border-radius: var(--shape-corner-small, 4px);
+}
+
+/* Hover effect for all tabs */
+.tab-btn:hover {
+  background-color: hsl(0, 0%, 90%); /* Slight grey for light theme */
+}
+
+.tab-btn:hover {
+  background-color: hsl(0, 0%, 50%); /* Slight grey for dark theme */
+  border-radius: var(--shape-corner-small, 4px);
+}
+
+.tab-text{
+  position: relative;
+  height: 48px;
+  line-height: 48px;
+}
+
+.tab-text::after{
+  content:"" ;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius:3px 3px 0 0;
+  background-color: var(--primary);
+  opacity: 0;
+}
+
+.tab-btn.active .tab-text::after{
+  opacity: 1;
+}
 
 
 /**
@@ -511,7 +575,16 @@ body{
   margin-inline: 16px;
   padding: 16px;
   margin-block-start:24px ;
-  border-radius: var(--radius-large);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--shape-corner-large);
+  box-shadow: var(--elevation-1); 
+}
+
+[data-theme="light"] .about-card {
+  background-color: var(--surface-container-low-light);
+}
+[data-theme="dark"] .about-card {
+  background-color: var(--surface-container-low-dark);
 }
 
 .about-card .card-title{
